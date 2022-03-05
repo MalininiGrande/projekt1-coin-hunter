@@ -19,7 +19,7 @@ body {
 	height: 100vh;
 	background-color: var(--pozadi);
 	background-repeat: repeat;
-	background-image: url('obrazky/pozadi/geometry.png');
+	background-image: url('obrazky/pozadi/weather.png');
 
 	/*  vyzkoušej i jiná pozadí :)
 	background-image: url('obrazky/pozadi/round.png');
@@ -41,11 +41,29 @@ body {
 	color: var(--score);
 }
 
-#panacek,
+
 #mince {
 	position: absolute;
 }
 
 #panacek {
+	position: absolute;
+	left: 700px;
+	top: 300px;
 	z-index: 1;
+	width: 90px;
 }
+
+#hudba {
+	position: absolute;
+	right: 0;
+}
+
+#button {
+	background-color: blue;
+	color: white;
+	position: absolute;
+	right: 0;
+	top: 45px;
+	z-index: 1;
+}	
