@@ -79,7 +79,6 @@ function setInterval() {
 
 
 let audio = document.getElementById("audio");
-audio.src = URL.createObjectURL("zvuky/hudba.mp3");
 audio.load();
 audio.play();
 
