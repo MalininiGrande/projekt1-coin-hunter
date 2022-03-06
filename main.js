@@ -61,13 +61,15 @@ function avoidEdgeY() {
 function avoidEdgeX() {
 	if (x < 0) {
 			    x = window.innerHeight - 100;
-			  } else if (x > window.innerHeight - 120) {
+			  } else if (x > window.innerHeight - 100) {
 			    x = 0;
 			  }
 }
 
 
-const getRandom = (min, max) => Math.floor(Math.random()*(max-min+1)+min);
+function getRandom(min, max) {
+	return Math.floor(Math.random()*(max-min)+min);
+}
 
 function setInterval() {
    coin.style.left= getRandom(0, window.innerWidth)+'px'; 
@@ -84,15 +86,14 @@ audio.play();
 
 
 
-
-
 // function getPosition (){
 // 	let coinX = 1;
 // 	let coinY = 1;
-// 	let randomX = Math.floor(Math.random() * coinX);
-// 	let randomY = Math.floor(Math.random()* coinY);
-// 	return [randomX, randomY];
-
+// 	let randomX = Math.floor(Math.random() * coinX[1]);
+// 	let randomY = Math.floor(Math.random()* coinY[1]);
+// 	// return [randomX, randomY];
+// 	coin.style.top = randomX + 'px';
+// 	coin.style.left = randomY + 'px';
 // }
 
 // function loadCoin () {

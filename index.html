@@ -9,13 +9,13 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
-<body onkeydown="move(event); avoidEdgeY(); avoidEdgeX(); loadCoin();">
+<body onkeydown="move(event); avoidEdgeY(); avoidEdgeX();">
 
 
 
 	<img id="panacek" src="obrazky/panacek.png" alt="Panáček">
 
-	<img onload="setInterval();"  id="mince" src="obrazky/mince.png" alt="Mince">
+	<img onload="setInterval(); getRandom();"  id="mince" src="obrazky/mince.png" alt="Mince">
 
 	<!-- <audio id="hudba" src="zvuky/hudba.mp3" autoplay loop></audio> -->
 
