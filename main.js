@@ -10,12 +10,29 @@ if (!( panacekX + panacekSirka < minceX || minceX + minceSirka < panacekX || pan
 
 let monster = document.querySelector("#panacek");
 let coin = document.querySelector("#mince");
+// monster souradnice
 let x = (window.innerHeight / 2);
 let y = (window.innerWidth / 2);
+let monsterWidth = 30;
+let monsterHeight = 50;   
+
+// coin souradnice
+
+let randomX = 50;
+let randomY = 50;
+let coinWidth = 50;
+let coinHeight = 50;
+  
 let change = 30;
+
+let points = document.querySelector(".points");
+let score = 1;
+
 
 
 function move(event) {
+	console.log ("move")
+	catchCoin();
 	if (event.keyCode === 40){
 			console.log ("Down");
 			x = x + change; 
@@ -46,35 +63,58 @@ function move(event) {
 				monster.style.left = y + "px";
 				monster.style.top = x + "px";
 				monster.src = 'obrazky/panacek-vpravo.png';
-			  }
+			}		
+			 
 }
 
 
+// monster se vraci  na obrayovku na druhou stranu
 function avoidEdgeY() {
 	if (y < 0) {
-			    y = window.innerWidth - 80;
-			  } else if (y > window.innerWidth - 80) {
-			    y = 0;
+			    y = window.innerWidth - monsterWidth;
+			  } else if (y > window.innerWidth) {
+			    y = 0 + monsterWidth;
 			  }
 }
 
 function avoidEdgeX() {
 	if (x < 0) {
-			    x = window.innerHeight - 100;
-			  } else if (x > window.innerHeight - 100) {
-			    x = 0;
+			    x = window.innerHeight - monsterHeight;
+			  } else if (x > window.innerHeight) {
+			    x = 0 + monsterHeight;
 			  }
 }
 
 
-function getRandom(min, max) {
-	return Math.floor(Math.random()*(max-min)+min);
+
+function coinPosition (){
+	randomX = Math.floor(Math.random() * window.innerHeight - coinHeight);
+	randomY = Math.floor(Math.random()* window.innerWidth - coinWidth);
+	coin.style.top = randomX + 'px';
+	coin.style.left = randomY + 'px';
 }
 
-function setInterval() {
-   coin.style.left= getRandom(0, window.innerWidth)+'px'; 
-   coin.style.top = getRandom(0, window.innerHeight)+'px'; 
-    
+
+
+
+function win() {
+	if (score >= 6) {
+		document.getElementById("fanfara").play();
+		alert("You rarely win, but sometimes you do.")
+	}
+}
+
+
+function catchCoin() {
+	console.log (x, y);
+	console.log (randomX, randomY);
+	if (!( x + monsterWidth < randomX || randomX + coinWidth < x || y + monsterHeight < randomY || randomY + coinHeight < y)) {
+		document.getElementById("zvukMince").play();
+		coinPosition();
+		points.innerHTML = score++;
+		win();
+	
+	}
 }
 
 
@@ -82,25 +122,14 @@ let audio = document.getElementById("audio");
 audio.load();
 audio.play();
 
+// aletrnativa coin position
 
-
-
-// function getPosition (){
-// 	let coinX = 1;
-// 	let coinY = 1;
-// 	let randomX = Math.floor(Math.random() * coinX[1]);
-// 	let randomY = Math.floor(Math.random()* coinY[1]);
-// 	// return [randomX, randomY];
-// 	coin.style.top = randomX + 'px';
-// 	coin.style.left = randomY + 'px';
+// function getRandom(min, max) {
+// 	return Math.floor(Math.random()*(max-min)+min);
 // }
 
-// function loadCoin () {
-// 	let xy = getPosition();
-// 	coin.style.top = xy[0] + 'px';
-// 	coin.style.left = xy[1] + 'px';
+// function setInterval() {
+//    coin.style.left= getRandom(0, window.innerWidth)+'px'; 
+//    coin.style.top = getRandom(0, window.innerHeight)+'px'; 
+    
 // }
-
-
-
-

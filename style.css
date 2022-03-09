@@ -31,19 +31,12 @@ body {
 	*/
 }
 
-#score {
-	position: absolute;
-	top: 50px;
-	left: 50px;
-	font-family: 'Press Start 2P', sans-serif;
-	font-size: 36px;
-	z-index: 999;
-	color: var(--score);
-}
+
 
 
 #mince {
 	position: absolute;
+	z-index: 2;
 }
 
 #panacek {
@@ -57,6 +50,7 @@ body {
 #hudba {
 	position: absolute;
 	right: 0;
+	top: 0;
 }
 
 #button {
@@ -67,3 +61,19 @@ body {
 	top: 45px;
 	z-index: -1;
 }	
+
+h1 {
+	text-align: center;
+	font-size: 50px;
+	font-family: 'Press Start 2P', sans-serif;
+}
+
+h2 {
+	position: absolute;
+	top: 0px;
+	left: 50px;
+	font-family: 'Press Start 2P', sans-serif;
+	font-size: 50px;
+	z-index: 999;
+	color: var(--score);
+}
