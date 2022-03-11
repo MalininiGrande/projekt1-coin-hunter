@@ -13,15 +13,15 @@ let coin = document.querySelector("#mince");
 // monster souradnice
 let x = (window.innerHeight / 2);
 let y = (window.innerWidth / 2);
-let monsterWidth = 30;
-let monsterHeight = 50;   
+let monsterWidth = 64;
+let monsterHeight = 70;   
 
 // coin souradnice
 
 let randomX = 50;
 let randomY = 50;
-let coinWidth = 50;
-let coinHeight = 50;
+let coinWidth = 36;
+let coinHeight = 36;
   
 let change = 30;
 
