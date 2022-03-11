@@ -73,7 +73,7 @@ function avoidEdgeY() {
 	if (y < 0) {
 			    y = window.innerWidth - monsterWidth;
 			  } else if (y > window.innerWidth) {
-			    y = 0 + monsterWidth;
+			    y = 0;
 			  }
 }
 
@@ -81,7 +81,7 @@ function avoidEdgeX() {
 	if (x < 0) {
 			    x = window.innerHeight - monsterHeight;
 			  } else if (x > window.innerHeight) {
-			    x = 0 + monsterHeight;
+			    x = 0;
 			  }
 }
 
